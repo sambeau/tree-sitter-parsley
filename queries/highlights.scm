@@ -153,10 +153,11 @@
 (attribute_name) @attribute
 (tag_text) @string
 
-; Tag punctuation
-(self_closing_tag ["<" "/>"] @punctuation.bracket)
-(open_tag ["<" ">"] @punctuation.bracket)
-(close_tag ["</" ">"] @punctuation.bracket)
+; Tag punctuation - make all brackets consistent
+"<" @punctuation.bracket
+">" @punctuation.bracket
+"</" @punctuation.bracket
+"/>" @punctuation.bracket
 
 ; Functions
 (function_expression ["fn" "function"] @keyword.function)
